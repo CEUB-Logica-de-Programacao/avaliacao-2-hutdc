@@ -33,4 +33,4 @@ def q3(prices):
     return max(resultArr)
 
 if __name__ == '__main__':
-    print(q3([7,5,2,6,3,4,1]]))
+    print(q3([7,5,2,6,3,4,1]))
