@@ -18,8 +18,26 @@
 
 
 def bonus(nums):
-    # Escreva seu código aqui
-    pass
+    max  = ""
+    resp = ""
+    arr = []
+    for x in nums:
+        arr.append(str(x))
+
+    while arr:
+
+        for x in arr:
+            if not max :
+                max = x
+            else:
+                if x + max > max +x:
+                    max = x
+
+        resp += max
+        arr.remove(max)
+        max = ""
+
+    return resp if not resp.startswith("0") else "0"
 
 
 if __name__ == '__main__':
