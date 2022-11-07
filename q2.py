@@ -25,7 +25,19 @@
 
 
 def q2(n):
-    # Escreva seu código aqui
+def combinacao(deg):
+    n = [0] * (deg + 2)
+    n[0] = 1
+    n[1] = 1
+    n[2] = 2
+
+    for i in range(3, deg + 1):
+        n[i] = n[i - 1] + n[i - 2] + n[i - 3]
+
+    return n[deg]
+
+deg = int(input('Informe o número de degraus:'))
+print(f'Combinações possiveis: {combinacao(deg)}')
     pass
 
 
