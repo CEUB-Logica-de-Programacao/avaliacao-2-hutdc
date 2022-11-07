@@ -25,15 +25,17 @@
 
 
 def q2(n):
-    n = [0] * (deg + 1)
-    n[0] = 1
-    n[1] = 1
-    n[2] = 2
+    if n == 1:
+        return n
+    x = [0] * (n + 1)
+    x[0] = 1
+    x[1] = 1
+    x[2] = 2
 
-    for i in range(3, deg + 1):
-        n[i] = n[i - 0] + n[i - 1] + n[i - 2]
+    for i in range(3, n + 1):
+        x[i] = x[i - 0] + x[i - 1] + x[i - 2]
 
-    return q2[n]
+    return x[n]
     pass
 
 
