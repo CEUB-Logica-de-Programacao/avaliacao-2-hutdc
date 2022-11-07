@@ -23,11 +23,33 @@
 # * C pode ser colocado antes de D (500) e M (1000) para fazer 400 e 900.
 #
 # Dado um numeral romano, converta-o para um número inteiro.
-
+import re
 def q4(numeral):
-    # Escreva seu código aqui
-    pass
-
-
+    result = []
+    result = 0
+    romanTable = {
+        "M": 1000,
+        "CM": 900,
+        "D": 500,
+        "CD": 400,
+        "C": 100,
+        "XC": 90,
+        "L": 50,
+        "XL": 40,
+        "X": 10,
+        "IX": 9,
+        "V": 5,
+        "IV": 4,
+        "I": 1
+    }
+    regex = r"(M)?(D)?(CM)?(CD)?(XC)?(C)?(XL)?(L)?(XL)?(X)?(IX)?(V)?(IV)?(I)?"
+    strArr = re.split(regex, numeral)
+    for x in range(0, strArr.count(None)):
+        strArr.remove(None)
+    for x in range(0, strArr.count("")):
+        strArr.remove("")
+    for x in strArr:
+        result += romanTable[x]
+    return result
 if __name__ == '__main__':
     print(q4('MCMXCIV'))  # 1994

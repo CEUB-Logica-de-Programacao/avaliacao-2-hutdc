@@ -8,7 +8,7 @@
 # ### Exemplo 1
 #
 # ```
-# Input: prices = [7,1,5,3,6,4]
+# Input: prices = [7,5,2,6,3,4,1]
 # Output: 5
 # Explicação: Compre no segundo dia (preço = 1) e venda no dia 5 (preço = 6), lucro = 6-1 = 5.
 # ```
@@ -22,9 +22,15 @@
 # ```
 
 def q3(prices):
-    # Escreva seu código aqui
-    pass
-
+    resultArr = []
+    
+    while len(prices) > 0:
+        x = slice(prices.index(min(prices)), len(prices))
+        a = prices[x]
+        resultArr.append(max(a) - a[0])
+        prices.remove(min(prices))
+        
+    return max(resultArr)
 
 if __name__ == '__main__':
-    print(q3([7, 1, 5, 3, 6, 4]))
+    print(q3([7,5,2,6,3,4,1]))
