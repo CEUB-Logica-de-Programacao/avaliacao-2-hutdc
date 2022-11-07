@@ -52,4 +52,4 @@ def q4(numeral):
         result += romanTable[x]
     return result
 if __name__ == '__main__':
-    print(q4('MCMXCIV))  # 1994
+    print(q4('MCMXCIV'))  # 1994
