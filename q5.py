@@ -21,11 +21,19 @@
 # "A".
 # Portanto, "A" é a cidade de destino.
 # ```
+from collections import Counter
 
 def q5(paths):
-    # Escreva seu código aqui
-    pass
-
+    origens = []
+    destinos = []
+    
+    for x in paths:
+        origens.append(x[0])
+        destinos.append(x[1])
+    
+    for x in destinos:
+        if not x in origens:
+            return x
 
 if __name__ == '__main__':
     print(q5([["London", "New York"], ["New York", "Lima"], ["Lima", "Sao Paulo"]]))
