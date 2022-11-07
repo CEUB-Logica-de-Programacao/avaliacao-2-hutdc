@@ -20,9 +20,15 @@
 # ```
 
 def q1(names, heights):
-    # Escreva seu código aqui
-    pass
-
-
+    pessoas = {}
+    resultArr = []
+    for x in range(0,len(names)):
+        pessoas[heights[x]] = names[x]
+    alturas = list(pessoas.keys())
+    alturasSorted = sorted(alturas, reverse=True)
+    for x in range(0,len(alturasSorted)):
+        resultArr.append(names[heights.index(alturasSorted[x])])
+    return resultArr
+    
 if __name__ == '__main__':
     print(q1(["Mary", "John", "Emma"], [180, 165, 170]))
