@@ -27,8 +27,7 @@ def q3(prices):
     while len(prices) > 0:
         x = slice(prices.index(min(prices)), len(prices))
         a = prices[x]
-        lucro = max(a) - a[0]
-        resultArr.append(lucro)
+        resultArr.append(max(a) - a[0])
         prices.remove(min(prices))
         
     return max(resultArr)
